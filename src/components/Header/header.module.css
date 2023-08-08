@@ -1,0 +1,201 @@
+.header {
+  padding: 19px 24px 25px 24px;
+}
+
+.header hr {
+  display: none;
+}
+
+.iconHamburger,
+.iconClose {
+  border: none;
+  background-color: #fff;
+}
+
+.iconClose,
+.iconHamburger,
+.logo,
+.menu a,
+.cartIcon,
+.avatar {
+  cursor: pointer;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.titleContainer {
+  display: flex;
+  gap: 16px;
+
+  align-items: flex-end;
+}
+
+.avatarContainer {
+  display: inline-flex;
+  gap: 22px;
+}
+
+.avatar {
+  width: 24px;
+  height: 24px;
+}
+
+.navbar {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 53px;
+
+  padding-top: 24px;
+  padding-left: 25px;
+  padding-right: 130px;
+
+  position: absolute;
+  left: -100%;
+  top: 0;
+  background-color: rgba(255, 255, 255, 1);
+  z-index: 1;
+
+  height: 100%;
+  transition: all 0.5s ease;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-left: 0;
+
+  list-style: none;
+}
+
+.menu li {
+  display: inline-block;
+}
+
+.menu a {
+  display: block;
+  text-decoration: none;
+
+  color: #1D2026;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 26px;
+  
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  opacity: 0.75;
+  background-color: rgba(0, 0, 0, 1);
+}
+
+.navbar.active{
+  left: 0;
+  transition: all 0.5s ease;
+}
+
+.backdrop.active {
+  left: 0;
+}
+
+@media (min-width: 1440px) {
+  .header {
+    display: grid;
+    padding-top: 28px;
+    gap: 34px;
+  }
+
+  .header hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    background: rgba(228, 233, 242, 1);
+  }
+
+  .logo {
+    cursor: pointer;
+  }
+
+  .iconHamburger,
+  .iconClose {
+    display: none;
+  }
+
+  .titleContainer {
+    align-items: center;
+    gap: 56.5px;
+  }
+
+  .navbar {
+    position: static;
+    padding-top: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .menu {
+    flex-direction: row;
+    gap: 32px;
+  }
+
+  .menu a {
+    color: #69707d;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 26px;
+
+    position: relative;
+  }
+
+  .menu a:hover {
+    color: #1d2026;
+  }
+
+  .menu a:hover::after {
+    content: "";
+    width: 100%;
+    height: 4px;
+    background: #ff7e1b;
+    display: block;
+    position: absolute;
+    bottom: -46px;
+  }
+
+  .avatarContainer {
+    display: flex;
+    align-items: center;
+    gap: 46px;
+  }
+
+  .cartIcon {
+    cursor: pointer;
+  }
+
+  .cartIcon:hover path {
+    fill: rgb(29, 32, 38);
+  }
+
+  .avatar {
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+  }
+
+  .avatar:hover {
+    border-radius: 50%;
+    border: 2px solid #ff7e1b;
+  }
+}
+
+
+
+

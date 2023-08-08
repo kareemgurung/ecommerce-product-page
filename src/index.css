@@ -68,3 +68,10 @@ body {
   background-color: #fff;
   color: rgb(105, 112, 125);
 }
+
+@media (min-width: 1440px) {
+  body {
+    margin-inline: auto;
+    width: min(77vw, 1110px);
+  }
+}
