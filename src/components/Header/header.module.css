@@ -57,7 +57,7 @@
   left: -100%;
   top: 0;
   background-color: rgba(255, 255, 255, 1);
-  z-index: 1;
+  z-index: 10;
 
   height: 100%;
   transition: all 0.5s ease;
@@ -96,6 +96,7 @@
   overflow: hidden;
   opacity: 0.75;
   background-color: rgba(0, 0, 0, 1);
+  z-index: 5;
 }
 
 .navbar.active{
@@ -110,7 +111,7 @@
 @media (min-width: 1440px) {
   .header {
     display: grid;
-    padding-top: 28px;
+    padding: 28px 0 0 0;
     gap: 34px;
   }
 
@@ -121,9 +122,6 @@
     background: rgba(228, 233, 242, 1);
   }
 
-  .logo {
-    cursor: pointer;
-  }
 
   .iconHamburger,
   .iconClose {
@@ -176,16 +174,11 @@
     gap: 46px;
   }
 
-  .cartIcon {
-    cursor: pointer;
-  }
-
   .cartIcon:hover path {
     fill: rgb(29, 32, 38);
   }
 
   .avatar {
-    cursor: pointer;
     width: 50px;
     height: 50px;
   }

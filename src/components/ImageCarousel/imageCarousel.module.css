@@ -1,0 +1,65 @@
+.container {
+  display: flex;
+}
+
+.image {
+  position: relative;
+}
+
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  cursor: pointer;
+}
+
+.prev {
+  left: 16px;
+}
+
+.next {
+  right: 16px;
+}
+
+.prev:hover svg path,
+.next:hover svg path {
+  stroke: #ff7e1b;
+}
+
+.thumbnails {
+  display: none;
+}
+
+@media (min-width: 1440px) {
+  .container {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .image {
+    width: 445px;
+  }
+
+  .image img,
+  .thumbnails img {
+    border-radius: 15px;
+  }
+
+  .prev,
+  .next {
+    display: none;
+  }
+
+  .thumbnails {
+    display: flex;
+    gap: 31px;
+
+    width: 88px;
+
+  }
+
+  .thumbnails img {
+    cursor: pointer;
+  }
+
+}
