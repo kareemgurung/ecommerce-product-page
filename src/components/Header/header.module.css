@@ -179,13 +179,16 @@
   }
 
   .avatar {
+    display: block;
     width: 50px;
     height: 50px;
   }
 
+
   .avatar:hover {
-    border-radius: 50%;
+    border-radius: 50px;
     border: 2px solid #ff7e1b;
+    transform: scale(1.09);
   }
 }
 

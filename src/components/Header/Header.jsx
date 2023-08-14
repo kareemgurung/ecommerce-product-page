@@ -33,7 +33,11 @@ const Header = () => {
               height="20"
             />
           </div>
-          <nav className={click ? `${styles.navbar} ${styles.active}` : styles.navbar}>
+          <nav
+            className={
+              click ? `${styles.navbar} ${styles.active}` : styles.navbar
+            }
+          >
             <button className={styles.iconClose} onClick={handleClick}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -50,9 +54,7 @@ const Header = () => {
                 />
               </svg>
             </button>
-            <ul
-              className={styles.menu}
-            >
+            <ul className={styles.menu}>
               <li>
                 <a href="/">Collections</a>
               </li>
