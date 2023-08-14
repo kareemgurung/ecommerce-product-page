@@ -1,8 +1,10 @@
+import { useContext } from "react";
 import Button from "../Button/Button";
 import Counter from "../Counter/Counter";
 import ImageCarousel from "../ImageCarousel/ImageCarousel";
 import PriceTag from "../PriceTag/PriceTag";
 import styles from "./productPage.module.css";
+import CartContext from "../../context/CartContext";
 
 const ProductPage = () => {
   const images = [
@@ -18,6 +20,9 @@ const ProductPage = () => {
     "/images/image-product-3-thumbnail.jpg",
     "/images/image-product-4-thumbnail.jpg",
   ];
+
+  const ctx = useContext(CartContext);
+
   return (
     <div className={styles.container}>
       <ImageCarousel images={images} thumbnails={thumbnails} />
@@ -29,13 +34,15 @@ const ProductPage = () => {
           Featuring a durable rubber outer sole, they’ll withstand everything
           the weather can offer.
         </p>
-        <PriceTag />
+        <PriceTag discountPrice="125.00" discount="50" originalPrice="250.00"/>
         <div className={styles.quantityContainer}>
-          <Counter />
+          <Counter
+          />
           <Button
             text="Add to cart"
-            type="button"
+            type="submit"
             img="/images/icon-cart.svg"
+            onClick={ctx.addToCart}
           />
         </div>
       </div>

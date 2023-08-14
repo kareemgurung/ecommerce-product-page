@@ -30,7 +30,7 @@ const ImageCarousel = ({ images, thumbnails }) => {
             <path
               d="M22.8572 14.2857L17.1429 20L22.8572 25.7143"
               stroke="#1D2026"
-              stroke-width="3"
+              strokeWidth="3"
             />
           </svg>
         </div>
@@ -46,14 +46,14 @@ const ImageCarousel = ({ images, thumbnails }) => {
             <path
               d="M17.1428 14.2857L22.8571 20L17.1428 25.7143"
               stroke="#1D2026"
-              stroke-width="3"
+              strokeWidth="3"
             />
           </svg>
         </div>
       </div>
       <div className={styles.thumbnails}>
         {thumbnails.map(thumbnail => (
-          <img src={thumbnail} alt=""/>
+          <img src={thumbnail} alt="" key={thumbnail}/>
         ))}
       </div>
     </div>
