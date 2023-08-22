@@ -11,7 +11,7 @@ const Header = () => {
 
   const handleClick = () => setClick((prevState) => !prevState);
   return (
-    <header className={styles.header}>
+    <header className={styles.header} role="banner">
       <div className={styles.container}>
         <div className={styles.titleContainer}>
           <button className={styles.iconHamburger} onClick={handleClick}>
@@ -42,6 +42,7 @@ const Header = () => {
             className={
               click ? `${styles.navbar} ${styles.active}` : styles.navbar
             }
+            role="navigation"
           >
             <button className={styles.iconClose} onClick={handleClick}>
               <svg
