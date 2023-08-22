@@ -28,7 +28,7 @@ const ProductPage = () => {
       <ImageCarousel images={images} thumbnails={thumbnails} />
       <div className={styles.descContainer}>
         <h3 className={styles.header}>Sneaker company</h3>
-        <h2 className={styles.title}>Fall limited edition sneakers</h2>
+        <h1 className={styles.title}>Fall limited edition sneakers</h1>
         <p className={styles.desc}>
           These low-profile sneakers are your perfect casual wear companion.
           Featuring a durable rubber outer sole, they’ll withstand everything
