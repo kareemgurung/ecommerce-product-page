@@ -1,6 +1,6 @@
 .button {
   display: flex;
-  border: none;
+  border: 1px solid transparent;
   flex-shrink: 0;
 
   padding: 20px 104px;
