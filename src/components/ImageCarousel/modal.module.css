@@ -1,96 +1,102 @@
 .container {
-  display: flex;
-  position: fixed;
-  z-index: 10;
-  left: 0;
-  top: 0;
-  padding-top: 60px;
-
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background: rgba(0, 0, 0, 0.75);
-
-  flex-direction: column;
+  display: none;
 }
 
-.image {
-  position: relative;
-  margin: auto;
+@media (min-width: 1440px) {
+  .container {
+    display: flex;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    padding-top: 60px;
 
-  width: 550px;
-  height: 550px;
-  padding-bottom: 89px;
-}
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: rgba(0, 0, 0, 0.75);
 
-.image img {
-  cursor: pointer;
-}
+    flex-direction: column;
+  }
 
-.image img,
-.thumbnails img {
-  border-radius: 15px;
-}
+  .image {
+    position: relative;
+    margin: auto;
 
-.closeButton {
-  position: absolute;
-  right: 0;
-  top: -44px;
-  cursor: pointer;
-}
+    width: 550px;
+    height: 550px;
+    padding-bottom: 89px;
+  }
 
-.closeButton svg path {
-  fill: #fff;
-}
+  .image img {
+    cursor: pointer;
+  }
 
-.closeButton:hover svg path {
-  fill: #ff7e1b;
-}
+  .image img,
+  .thumbnails img {
+    border-radius: 15px;
+  }
 
-.prev,
-.next {
-  position: absolute;
-  top: 50%;
-  cursor: pointer;
-}
+  .closeButton {
+    position: absolute;
+    right: 0;
+    top: -44px;
+    cursor: pointer;
+  }
 
-.prev:hover svg path,
-.next:hover svg path {
-  stroke: #ff7e1b;
-}
+  .closeButton svg path {
+    fill: #fff;
+  }
 
-.prev {
-  left: -28px;
-}
+  .closeButton:hover svg path {
+    fill: #ff7e1b;
+  }
 
-.next {
-  right: -28px;
-}
+  .prev,
+  .next {
+    position: absolute;
+    top: 50%;
+    cursor: pointer;
+  }
 
-.thumbnails {
-  display: flex;
-  gap: 31px;
+  .prev:hover svg path,
+  .next:hover svg path {
+    stroke: #ff7e1b;
+  }
 
-  width: 88px;
+  .prev {
+    left: -28px;
+  }
 
-  position: absolute;
-  bottom: -128px;
-  left: 53px;
-  right: 53px;
-  z-index: 100;
-}
+  .next {
+    right: -28px;
+  }
 
-.thumbnail {
-  border-radius: 10px;
-  cursor: pointer;
-  background-color: lightgray;
-}
+  .thumbnails {
+    display: flex;
+    gap: 31px;
 
-.thumbnail:hover {
-  opacity: 0.7;
-  background: linear-gradient(
-    0deg,
-    rgba(255, 255, 255, 0.5) 0%,
-    rgba(255, 255, 255, 0.5) 100%
-  );
+    width: 88px;
+
+    position: absolute;
+    bottom: -128px;
+    left: 53px;
+    right: 53px;
+  }
+
+  .thumbnail {
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #fff;
+  }
+
+  .thumbnail:hover,
+  .active {
+    opacity: 0.5;
+  }
+
+  .active {
+    opacity: 0.2;
+    border: 2px solid #ff7e1b;
+  }
 }

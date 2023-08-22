@@ -28,8 +28,8 @@ const Cart = () => {
           <div className={styles.desc}>
             <p>Fall Limited Edition Sneakers</p>
             <div className={styles.price}>
-              <p>$125.00 x 3</p>
-              <p className={styles.total}>$375.00</p>
+              <p>$125.00 x {ctx.finalCount}</p>
+              <p className={styles.total}>${(125 * ctx.finalCount).toFixed(2)}</p>
             </div>
           </div>
           <svg

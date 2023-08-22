@@ -14,7 +14,7 @@ const CartContext = createContext({
 export const CartContextProvider = (props) => {
   const [productCount, setProductCount] = useState(0);
   const [finalCount, setFinalCount] = useState(0);
-  const [showCart, setShowCart] = useState(true);
+  const [showCart, setShowCart] = useState(false);
 
   const addToCartHandler = () => {
     const newCount = finalCount + productCount;

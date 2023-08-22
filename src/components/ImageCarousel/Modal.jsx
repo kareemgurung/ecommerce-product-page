@@ -1,8 +1,9 @@
 import { useContext } from "react";
 import styles from "./modal.module.css";
 import ImageContext from "../../context/ImageContext";
+import Images from "../../data";
 
-const Modal = ({ images, thumbnails }) => {
+const Modal = () => {
   const ctx = useContext(ImageContext);
   return (
     <div className={styles.container}>
@@ -23,9 +24,9 @@ const Modal = ({ images, thumbnails }) => {
             />
           </svg>
         </div>
-        <img src={images[0]} alt="product" loading="lazy" />
+        <img src={Images[ctx.currentIndex].image} alt="product" />
 
-        <div className={styles.prev}>
+        <div className={styles.prev} onClick={ctx.prevImage}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="56"
@@ -37,7 +38,7 @@ const Modal = ({ images, thumbnails }) => {
             <path d="M32 20L24 28L32 36" stroke="#1D2026" strokeWidth="3" />
           </svg>
         </div>
-        <div className={styles.next}>
+        <div className={styles.next} onClick={ctx.nextImage}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="56"
@@ -50,17 +51,21 @@ const Modal = ({ images, thumbnails }) => {
           </svg>
         </div>
         <div className={styles.thumbnails}>
-        {thumbnails.map((thumbnail) => (
-          <img
-            src={thumbnail}
-            alt=""
-            key={thumbnail}
-            className={styles.thumbnail}
-          />
-        ))}
+          {Images.map((image) => (
+            <img
+              src={image.thumbnail}
+              alt=""
+              key={image.id}
+              className={
+                ctx.currentIndex === image.id
+                  ? `${styles.thumbnail} ${styles.active}`
+                  : `${styles.thumbnail}`
+              }
+              onClick={() => ctx.selectImage(image.id)}
+            />
+          ))}
+        </div>
       </div>
-      </div>
-
     </div>
   );
 };

@@ -25,12 +25,6 @@
 }
 
 @media (min-width: 1440px) {
-  /* .container {
-    flex-shrink: 0;
-    padding:  0 16px;
-    gap: 45.5px;
-  } */
-
   .container {
     padding: 22px 16px;
     width: 157px;

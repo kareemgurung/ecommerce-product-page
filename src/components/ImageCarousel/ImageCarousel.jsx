@@ -1,30 +1,19 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import styles from "./imageCarousel.module.css";
 import Modal from "./Modal";
 import ImageContext from "../../context/ImageContext";
+import Images from "../../data";
 
-const ImageCarousel = ({ images, thumbnails }) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+const ImageCarousel = () => {
   const ctx = useContext(ImageContext);
 
-  const prevImage = () => {
-    const newIndex = currentIndex === 0 ? images.length - 1 : currentIndex - 1;
-    setCurrentIndex(newIndex);
-  };
-
-  const nextImage = () => {
-    const newIndex = currentIndex === images.length - 1 ? 0 : currentIndex + 1;
-    setCurrentIndex(newIndex);
-  };
   return (
     <>
       <div className={styles.container}>
         <div className={styles.image} onClick={ctx.openModal}>
+          <img src={Images[ctx.currentIndex].image} alt="product" />
 
-          <img src={images[currentIndex]} alt="product" />
-
-
-          <div className={styles.prev} onClick={prevImage}>
+          <div className={styles.prev} onClick={ctx.prevImage}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="40"
@@ -40,7 +29,7 @@ const ImageCarousel = ({ images, thumbnails }) => {
               />
             </svg>
           </div>
-          <div className={styles.next} onClick={nextImage}>
+          <div className={styles.next} onClick={ctx.nextImage}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="40"
@@ -58,17 +47,22 @@ const ImageCarousel = ({ images, thumbnails }) => {
           </div>
         </div>
         <div className={styles.thumbnails}>
-          {thumbnails.map((thumbnail) => (
+          {Images.map((image) => (
             <img
-              src={thumbnail}
+              src={image.thumbnail}
               alt=""
-              key={thumbnail}
-              className={styles.thumbnail}
+              key={image.id}
+              className={
+                ctx.currentIndex === image.id
+                  ? `${styles.thumbnail} ${styles.active}`
+                  : `${styles.thumbnail}`
+              }
+              onClick={() => ctx.selectImage(image.id)}
             />
           ))}
         </div>
       </div>
-      {ctx.modalState && <Modal images={images} thumbnails={thumbnails} />}
+      {ctx.modalState && <Modal />}
     </>
   );
 };
